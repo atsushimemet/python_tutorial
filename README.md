@@ -9,7 +9,7 @@ git clone <HTTPS OR SSH OR GitHub CLI>
 ```
 2. Create images in pythoh_tutorial repository(=directory).
 ```
-docker build -t <THE IMAGE NAME ONE WANTS>
+docker build -t <THE IMAGE NAME ONE WANTS> .
 ```
 3. For creating container, edit Makefile
 - Edit path
