@@ -1,17 +1,12 @@
 run:
-    docker run --detach -it --rm \
-    -p 127.0.0.1:49153:8889 \
-    -v /Users/ozawaatsushi:/home/jovyan/work \
-    --name notebook \
-    jupyter/pyspark-notebook:31b807ec9e83 \
-    /bin/bash
+	docker run --detach -it --rm -p 127.0.0.1:8889:8889 -v $(HOME)/Start-Up/python_tutorial:/home/work --name python_tutorial my_project_jupyterlab-ds /bin/bash
 jl:
-    docker exec -it \
-    notebook \
-    jupyter lab \
-    --port 8889 --ip="0.0.0.0" \
-    --allow-root \
-    --NotebookApp.token='' \
-    --no-browser
+	docker exec -it \
+	python_tutorial \
+	jupyter lab \
+	--port 8889 --ip="0.0.0.0" \
+	--allow-root \
+	--NotebookApp.token='' \
+	--no-browser
 stop:
-    docker stop notebook
+	docker stop python_tutorial
